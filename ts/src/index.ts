@@ -28,12 +28,10 @@ async function getAdvice(numberRandomSearch: number): Promise<void> {
 
     let numberAdvice: string = `${(await json).slip.id}`;
     let messageAdvice: string = `${(await json).slip.advice}`;
-    setTimeout(() => {
-      $numberAdvice.textContent = `#${numberAdvice}`;
-      $messageAdvice.textContent = `“${messageAdvice}”`;
 
-      switchLoader("active-get");
-    }, 3000);
+    $numberAdvice.textContent = `#${numberAdvice}`;
+    $messageAdvice.textContent = `“${messageAdvice}”`;
+    switchLoader("active-get");
   } catch (error) {
     console.log(error);
   }

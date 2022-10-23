@@ -1,28 +1,71 @@
 @import url("./root.css");
 @import url("./loader.css");
+.flex {
+  display: flex;
+  justify-content: center;
+}
 .squad-center {
-  max-width: 29.9rem;
+  max-width: 34.375rem;
   width: 100%;
   background: var(--dark-grayish-blue);
-  padding: 1rem;
+  padding: 2.5rem 2rem 0 2rem;
   border-radius: 1rem;
 }
-.squad-center-id {
-  display: flex;
-}
-.squad-center-id p {
-  letter-spacing: 0.15em;
-  color: var(--neon-green);
-}
+.squad-center-id p,
 .squad-center-id span {
-  letter-spacing: 0.15em;
-  font-style: italic;
+  letter-spacing: 0.35em;
   color: var(--neon-green);
+  font-size: 0.8rem;
 }
 .squad-center-parh {
   font-size: 1.75rem;
   color: var(--white);
+  text-align: center;
+  margin: 2rem 0;
+}
+.squad-center-responsive {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+}
+.squad-center-responsive-img {
+  background-image: url("../assets/pattern-divider-mobile.svg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+.squad-center-button-container_child {
+  border-radius: 255rem;
+  background-color: var(--neon-green);
+  width: 4rem;
+  height: 4rem;
+  align-items: center;
+  position: relative;
+  top: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.squad-center-button-container_child img {
+  transition: 0.3s;
+}
+.squad-center-button-container_child:hover {
+  box-shadow: 0px 0px 36px 4px var(--neon-green);
+}
+.squad-center-button-container_child:hover img {
+  scale: 1.05;
+}
+.loader {
+  margin: 2rem 0;
 }
 .active-get {
   display: none;
+}
+@media (min-width: 500px) {
+  .squad-center {
+    padding: 2.5rem 3rem 0 3rem;
+  }
+  .squad-center-responsive-img {
+    background-image: url("../assets/pattern-divider-desktop.svg");
+  }
 }

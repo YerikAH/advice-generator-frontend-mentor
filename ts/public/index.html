@@ -18,16 +18,17 @@
   <body>
     <main>
       <div class="squad-center">
-        <div class="loader active-get" id="loader">
-          <div class="lds-ring">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="loader-container flex">
+          <div class="loader active-get" id="loader">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
         </div>
         <div class="squard-center-important" id="adviceInfo">
-          <div class="squad-center-id">
+          <div class="squad-center-id flex">
             <p>ADVICE</p>
             <span id="numberAdvice"></span>
           </div>
@@ -36,7 +37,14 @@
         <div class="squad-center-responsive">
           <div class="squad-center-responsive-img"></div>
         </div>
-        <button id="otherAdviceButton">otra vez</button>
+        <div class="squad-center-button-container flex">
+          <button
+            id="otherAdviceButton"
+            class="squad-center-button-container_child flex"
+          >
+            <img src="../../assets/icon-dice.svg" alt="" />
+          </button>
+        </div>
       </div>
     </main>
 

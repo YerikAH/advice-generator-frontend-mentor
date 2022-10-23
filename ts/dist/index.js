@@ -32,11 +32,9 @@ function getAdvice(numberRandomSearch) {
             }
             let numberAdvice = `${(yield json).slip.id}`;
             let messageAdvice = `${(yield json).slip.advice}`;
-            setTimeout(() => {
-                $numberAdvice.textContent = `#${numberAdvice}`;
-                $messageAdvice.textContent = `“${messageAdvice}”`;
-                switchLoader("active-get");
-            }, 3000);
+            $numberAdvice.textContent = `#${numberAdvice}`;
+            $messageAdvice.textContent = `“${messageAdvice}”`;
+            switchLoader("active-get");
         }
         catch (error) {
             console.log(error);
