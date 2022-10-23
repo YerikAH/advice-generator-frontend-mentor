@@ -1,0 +1,28 @@
+@import url("./root.css");
+@import url("./loader.css");
+.squad-center {
+  max-width: 29.9rem;
+  width: 100%;
+  background: var(--dark-grayish-blue);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.squad-center-id {
+  display: flex;
+}
+.squad-center-id p {
+  letter-spacing: 0.15em;
+  color: var(--neon-green);
+}
+.squad-center-id span {
+  letter-spacing: 0.15em;
+  font-style: italic;
+  color: var(--neon-green);
+}
+.squad-center-parh {
+  font-size: 1.75rem;
+  color: var(--white);
+}
+.active-get {
+  display: none;
+}

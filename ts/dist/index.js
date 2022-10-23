@@ -14,12 +14,13 @@ const d = document;
 let $numberAdvice = d.getElementById("numberAdvice");
 let $messageAdvice = d.getElementById("messageAdvice");
 let $otherAdviceButton = d.getElementById("otherAdviceButton");
+let $adviceInfo = d.getElementById("adviceInfo");
+let $loader = d.getElementById("loader");
 // Async await
 function getAdvice(numberRandomSearch) {
     return __awaiter(this, void 0, void 0, function* () {
         let url = `https://api.adviceslip.com/advice/${numberRandomSearch}`;
-        $numberAdvice.textContent = "cargando";
-        $messageAdvice.textContent = "cargando";
+        switchLoader("active-get");
         try {
             let rst = yield fetch(url);
             let json = yield rst.json();
@@ -32,8 +33,9 @@ function getAdvice(numberRandomSearch) {
             let numberAdvice = `${(yield json).slip.id}`;
             let messageAdvice = `${(yield json).slip.advice}`;
             setTimeout(() => {
-                $numberAdvice.textContent = `# ${numberAdvice}`;
-                $messageAdvice.textContent = `${messageAdvice}`;
+                $numberAdvice.textContent = `#${numberAdvice}`;
+                $messageAdvice.textContent = `“${messageAdvice}”`;
+                switchLoader("active-get");
             }, 3000);
         }
         catch (error) {
@@ -45,6 +47,10 @@ $otherAdviceButton.addEventListener("click", (e) => {
     let randomNumber = Math.round(Math.random() * 220);
     getAdvice(randomNumber);
 });
+function switchLoader(active) {
+    $loader.classList.toggle(active);
+    $adviceInfo.classList.toggle(active);
+}
 // open app
 let numberTemp = 117;
 getAdvice(numberTemp);

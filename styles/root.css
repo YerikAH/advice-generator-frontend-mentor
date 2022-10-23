@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
 :root {
   --light-cyan: hsl(193, 38%, 86%);
-  --neongreen: hsl(150, 100%, 66%);
+  --neon-green: hsl(150, 100%, 66%);
   --grayish-blue: hsl(217, 19%, 38%);
   --dark-grayish-blue: hsl(217, 19%, 24%);
   --dark-blue: hsl(218, 23%, 16%);
+  --white: hsl(0, 0%, 100%);
+  --type-family: "Manrope", sans-serif;
 }
 *,
 *::after,
@@ -11,6 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--type-family);
 }
 a,
 li,
@@ -19,4 +23,13 @@ button {
   text-decoration: none;
   outline: none;
   border: none;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--dark-blue);
 }
