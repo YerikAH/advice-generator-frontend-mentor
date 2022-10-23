@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <title>advice generator</title>
+  </head>
+  <body>
+    <main>
+      <div class="squad-center">
+        <div class="loader-container flex">
+          <div class="loader active-get" id="loader">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="squard-center-important" id="adviceInfo">
+          <div class="squad-center-id flex">
+            <p>ADVICE</p>
+            <span id="numberAdvice"></span>
+          </div>
+          <p id="messageAdvice" class="squad-center-parh"></p>
+        </div>
+        <div class="squad-center-responsive">
+          <div class="squad-center-responsive-img"></div>
+        </div>
+        <div class="squad-center-button-container flex">
+          <button
+            id="otherAdviceButton"
+            class="squad-center-button-container_child flex"
+          >
+            <img src="../../assets/icon-dice.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="../src/index.js"></script>
+  </body>
+</html>

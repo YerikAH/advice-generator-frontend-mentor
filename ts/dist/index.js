@@ -36,18 +36,21 @@ function getAdvice(numberRandomSearch) {
             $messageAdvice.textContent = `“${messageAdvice}”`;
             switchLoader("active-get");
         }
-        catch (error) {
-            console.log(error);
+        catch (err) {
+            switchLoader("active-get");
+            $numberAdvice.textContent = `#404`;
+            $messageAdvice.textContent = `“Sorry, an error occurred, please try again.”`;
         }
     });
 }
-$otherAdviceButton.addEventListener("click", (e) => {
-    let randomNumber = Math.round(Math.random() * 220);
-    getAdvice(randomNumber);
-});
+$otherAdviceButton.addEventListener("click", getAgain);
 function switchLoader(active) {
     $loader.classList.toggle(active);
     $adviceInfo.classList.toggle(active);
+}
+function getAgain() {
+    let randomNumber = Math.round(Math.random() * 220);
+    getAdvice(randomNumber);
 }
 // open app
 let numberTemp = 117;

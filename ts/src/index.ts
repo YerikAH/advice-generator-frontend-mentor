@@ -32,19 +32,23 @@ async function getAdvice(numberRandomSearch: number): Promise<void> {
     $numberAdvice.textContent = `#${numberAdvice}`;
     $messageAdvice.textContent = `“${messageAdvice}”`;
     switchLoader("active-get");
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    switchLoader("active-get");
+    $numberAdvice.textContent = `#404`;
+    $messageAdvice.textContent = `“Sorry, an error occurred, please try again.”`;
   }
 }
 
-$otherAdviceButton.addEventListener("click", (e) => {
-  let randomNumber: number = Math.round(Math.random() * 220);
-  getAdvice(randomNumber);
-});
+$otherAdviceButton.addEventListener("click", getAgain);
 
-function switchLoader(active: string) {
+function switchLoader(active: string): void {
   $loader.classList.toggle(active);
   $adviceInfo.classList.toggle(active);
+}
+
+function getAgain(): void {
+  let randomNumber: number = Math.round(Math.random() * 220);
+  getAdvice(randomNumber);
 }
 // open app
 let numberTemp: number = 117;
