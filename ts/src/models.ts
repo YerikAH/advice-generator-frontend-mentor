@@ -1,8 +1,8 @@
 export interface Welcome {
-  slip?: Slip;
+  slip: Slip;
 }
 
 export interface Slip {
-  id?: number;
-  advice?: string;
+  id: number;
+  advice: string;
 }
