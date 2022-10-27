@@ -19,11 +19,11 @@ xhttp.addEventListener("readystatechange", (e) => {
     let json = JSON.parse(xhttp.responseText);
     let numberAdvice = json.slip.id;
     let messageAdvice = json.slip.advice;
-    switchLoader("active-get");
+    switchLoader();
     $numberAdvice.textContent = `#${numberAdvice}`;
     $messageAdvice.textContent = `“${messageAdvice}”`;
   } else {
-    switchLoader("active-get");
+    switchLoader();
     $numberAdvice.textContent = `#404`;
     $messageAdvice.textContent = `“Sorry, an error occurred, please try again.”`;
   }
@@ -33,8 +33,9 @@ $otherAdviceButton.addEventListener("click", getAgain);
 // functions
 
 function getData(number) {
-  switchLoader("active-get");
-  xhttp.open("GET", `https://api.adviceslip.com/advice/${number}`);
+  switchLoader();
+  let url = `https://api.adviceslip.com/advice/${number}`;
+  xhttp.open("GET", url);
   xhttp.send();
 }
 
@@ -43,9 +44,10 @@ function getAgain() {
   getData(randomNumber);
 }
 
-function switchLoader(active) {
-  $loader.classList.toggle(active);
-  $adviceInfo.classList.toggle(active);
+function switchLoader() {
+  let classChangeHTML = "active-get";
+  $loader.classList.toggle(classChangeHTML);
+  $adviceInfo.classList.toggle(classChangeHTML);
 }
 
 //open app
